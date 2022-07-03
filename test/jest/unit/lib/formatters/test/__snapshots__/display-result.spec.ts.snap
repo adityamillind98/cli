@@ -97,7 +97,9 @@ Licenses:          enabled
 
 Tested 40 dependencies for known issues, found 3 issues.
 
-Tip: Detected multiple supported manifests (3), use --all-projects to scan all of them at once."
+Tip: Detected multiple supported manifests (3), use --all-projects to scan all of them at once.
+
+To remove this message in the future, please run \`snyk config set disableSuggestions=true\`"
 `;
 
 exports[`displayResult Docker test result with base image name not found warning 1`] = `
@@ -130,7 +132,9 @@ Warning: Unable to analyse Dockerfile provided through \`--file\`.
 
 Pro tip: use \`--exclude-base-image-vulns\` to exclude from display Docker base image vulnerabilities.
 
-To remove this message in the future, please run \`snyk config set disableSuggestions=true\`"
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See [URL]
+
+To remove these messages in the future, please run \`snyk config set disableSuggestions=true\`"
 `;
 
 exports[`displayResult Docker test result with base image non resolvable warning 1`] = `
@@ -163,7 +167,9 @@ Warning: Unable to analyse Dockerfile provided through \`--file\`.
 
 Pro tip: use \`--exclude-base-image-vulns\` to exclude from display Docker base image vulnerabilities.
 
-To remove this message in the future, please run \`snyk config set disableSuggestions=true\`"
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See [URL]
+
+To remove these messages in the future, please run \`snyk config set disableSuggestions=true\`"
 `;
 
 exports[`displayResult Docker test result with remediation advice 1`] = `
@@ -222,6 +228,8 @@ Major upgrades
 Base Image              Vulnerabilities  Severity
 ubuntu:impish-20210928  13               0 critical, 0 high, 2 medium, 11 low
 
+
+To remove this message in the future, please run \`snyk config set disableSuggestions=true\`
 
 Learn more: [URL]"
 `;
