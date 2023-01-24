@@ -12,14 +12,18 @@ The `snyk test` command checks projects for open source vulnerabilities and lice
 
 Possible exit codes and their meaning:
 
-**0**: success, no vulnerabilities found\
-**1**: action_needed, vulnerabilities found\
+**0**: success (scan completed), no vulnerabilities found\
+**1**: action_needed (scan completed), vulnerabilities found\
 **2**: failure, try to re-run command\
 **3**: failure, no supported projects detected
 
 ## Configure the Snyk CLI
 
 You can use environment variables to configure the Snyk CLI and set variables for connecting with the Snyk API. See [Configure the Snyk CLI](https://docs.snyk.io/features/snyk-cli/configure-the-snyk-cli)
+
+## Code execution warning
+
+Before scanning your code, review the [Code execution warning for Snyk CLI](https://docs.snyk.io/snyk-cli/code-execution-warning-for-snyk-cli)
 
 ## Debug
 
@@ -144,6 +148,10 @@ Specify a custom Snyk project name.
 Specify a reference which differentiates this project, for example, a branch name or version. Projects having the same reference can be grouped based on that reference. Only supported for Snyk Open Source.
 
 For more information see [Separating projects by branch or version](https://docs.snyk.io/snyk-cli/secure-your-projects-in-the-long-term/grouping-projects-by-branch-or-version)
+
+You can use `--target-reference=<TARGET_REFERENCE>` when running tests to apply the same ignores and policies as for a monitored target.
+
+For more information see [Ignore issues](https://docs.snyk.io/features/fixing-and-prioritizing-issues/issue-management/ignore-issues)
 
 ### `--policy-path=<PATH_TO_POLICY_FILE>`
 
@@ -349,17 +357,21 @@ The format is `snyk <command> -- [<context-specific_options>]`
 
 Example: `snyk test -- --build-cache`
 
+**Note:** Do not use double quotes in any `-- [<context-specific_options>]`.
+
+Example: Use `snyk test --org=myorg -- -s settings.xml` NOT `snyk test --org=myorg -- "-s settings.xml"`
+
 ## Examples for the snyk test command
 
 Test a project in the current folder for known vulnerabilities:
 
 `$ snyk test`
 
-Test a specific dependency for vulnerabilities:
+Test a specific dependency for vulnerabilities (**npm** only):
 
 `$ snyk test ionic@1.6.5`
 
-Test the latest version of an npm package:
+Test the latest version of an **npm** package:
 
 `$ snyk test lodash`
 
