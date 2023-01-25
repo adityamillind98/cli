@@ -19,3 +19,4 @@ We ask that:
 - You do not violate any other applicable laws or regulations.
 
 Find out more about our [Bug Bounty program](https://docs.snyk.io/more-info/disclosing-vulnerabilities/disclose-a-vulnerability-in-snyk-services)
+
